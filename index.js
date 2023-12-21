@@ -24,7 +24,7 @@ const routes = [
   { path: '/image-galleries', file: 'go.html' },
 ];
 
-app.get('/edu/*', cors({ origin: true }), async (req, res, next) => {
+app.get('/edu/*', cors({ origin: false }), async (req, res, next) => {
   try {
     const reqTarget = `https://raw.githubusercontent.com/ypxa/y/main/${req.params[0]}`;
     const asset = await fetch(reqTarget);
